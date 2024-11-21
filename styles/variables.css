@@ -12,9 +12,10 @@
   --text-color: #f1b2ce;
   --border-color: #ff0070;
   --nav-hover-color: #ff007066;
+  --background-color: #000028;
   --background-image: url(../images/cover-image-dark.png);
-
   --header-decoration-display: flex;
+
   --font-family: 'IBM Plex mono';
   --font-size: 18px;
   --main-gap: 10px;
