@@ -11,7 +11,8 @@
   */
 
   --logo-color: #ffc2e6;
-  --shadow-color: #ff0070;
+  --logo-shadow-color: #ff0070;
+  --link-shadow-color: #ff8dcb;
   --title-color: #353430;
   --accent-title-color: #353430;
   --accent-background-color: #ff8dcb;
@@ -26,7 +27,8 @@
 @media (prefers-color-scheme: light) {
   :root {
     --logo-color: #ffc2e6;
-    --shadow-color: #ff0070;
+    --logo-shadow-color: #ff0070;
+    --link-shadow-color: #ff8dcb;
     --title-color: #353430;
     --accent-title-color: #353430;
     --accent-background-color: #ff8dcb;

@@ -5,7 +5,8 @@
 
 :root {
   --logo-color: #db00ff;
-  --shadow-color: #ff0070;
+  --logo-shadow-color: #ff0070;
+  --link-shadow-color: #ff0070;
   --title-color: #ff0070;
   --accent-title-color: #000028;
   --accent-background-color: #ff0070;

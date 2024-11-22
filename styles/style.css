@@ -2,7 +2,9 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  font-family: var(--font-family, sans-serif);
+
+  /* Исправлено указание семейства шрифтов */
+  font-family: var(--font-family, sans-serif), sans-serif;
   font-weight: normal;
   font-size: var(--font-size);
   background-color: var(--background-color);
@@ -45,7 +47,10 @@
   grid-template-rows: min-content calc(var(--logo-grid-height) + var(--logo-margin-block-end)) fit-content(117px);
   margin-block-end: 40px;
   padding-block-start: 75px;
-  min-block-size: 100vh;
+
+  /* Исправлено задание высоты */
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .header__decoration {
@@ -70,7 +75,7 @@
   content: '';
   display: inline-block;
   border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--shadow-color, #ff0070);
+  box-shadow: 0 0 4px 2px var(--logo-shadow-color, #ff0070);
   background-color: var(--accent-background-color, #ff0070);
   inline-size: 9px;
   block-size: 9px;
@@ -95,6 +100,9 @@
   color: var(--title-color, #ff0070);
   text-transform: lowercase;
   background-color: transparent;
+
+  /* Добавлен сброс стандартных стилей */
+  appearance: none;
   block-size: 26px;
   inline-size: 70px;
 }
@@ -109,8 +117,8 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: 0;
   border-block-end: 1px solid var(--border-color, #ff0070);
+  outline: 0;
 }
 
 .header__logo {
@@ -122,7 +130,7 @@
   font-weight: bold;
   font-size: var(--logo-font-size);
   line-height: 95.7px;
-  text-shadow: 4px 4px 0 var(--shadow-color, #ff0070);
+  text-shadow: 4px 4px 0 var(--logo-shadow-color, #ff0070);
 }
 
 .title-decor {
@@ -144,6 +152,7 @@
     grid-template-columns: repeat(2, 1fr);
     margin-block-end: 60px;
     padding-block-start: 192px;
+    min-block-size: 1024px;
   }
 
   .header__theme-menu {
@@ -164,6 +173,7 @@
 @media (width >=1024px) {
   .header {
     padding-block-start: var(--main-gap);
+    min-block-size: 768px;
   }
 
   .header__theme-menu {
@@ -208,23 +218,14 @@
   position: relative;
   line-height: 23.4px;
   text-decoration: none;
-  text-shadow: 1px 1px 0 var(--shadow-color, #ff0070);
+  text-shadow: 1px 1px 0 var(--link-shadow-color, #ff0070);
 }
 
 .link:hover {
-  cursor: pointer;
-}
 
-/* Подчёркивание ссылки при наведении реализовано через псевдоэлемент, т.к. при реализации через text-decoration у подчёркивания тоже появляется тень, которой нет в дизайне */
-.link:hover::after {
-  content: '';
-  position: absolute;
-  display: inline-block;
-  background-color: currentColor;
-  inset-inline-start: 0;
-  inset-block-end: 0px;
-  block-size: 1px;
-  inline-size: 100%;
+  /* Подчёркивание при наведении реализовано через border-bottom */
+  border-bottom: 1px solid currentColor;
+  cursor: pointer;
 }
 
 .link:focus-visible {
@@ -332,10 +333,25 @@
 .footer {
   position: relative;
   display: flex;
-  min-block-size: 100vh;
+
+  /* Исправлено задание высоты */
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .footer__logo {
   margin: auto;
-  text-shadow: 2px 2px 0 var(--shadow-color, #ff0070);
+  text-shadow: 2px 2px 0 var(--logo-shadow-color, #ff0070);
+}
+
+@media (width >=768px) {
+  .footer {
+    min-block-size: 1024px;
+  }
+}
+
+@media (width >=1024px) {
+  .footer {
+    min-block-size: 768px;
+  }
 }
